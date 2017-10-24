@@ -69,7 +69,12 @@ def get_keys(limit):
             print e
             sys.exit(1)
 
-        data = json.loads(response.content)
+        try:
+            data = json.loads(response.content)
+        except ValueError:
+            # decode failed
+            return False
+
         pastebin_keys = pastebin_keys[:limit]
 
         # TODO: store in database
