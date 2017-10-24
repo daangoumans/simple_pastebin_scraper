@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+import sys
 import os
 import re
 import time
@@ -85,11 +86,9 @@ def main():
     print ""
     setup_word_list()
     print ("Scanning for the following tags: " + str(word_list))
-    print "First run takes some time, please wait"
     print "--------------------------------------------"
     while True:
         get_keys(250)  # TODO: CLI setting
-        print ""
         time.sleep(60)  # TODO: CLI setting
 
 if __name__ == "__main__":
